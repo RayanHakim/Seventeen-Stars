@@ -1,0 +1,1594 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            #111116 0%,
+            #07070b 35%,
+            #020204 75%,
+            #000000 100%
+        );
+
+    color: white;
+
+    font-family:
+        Inter,
+        Arial,
+        sans-serif;
+
+    touch-action: none;
+}
+
+
+body {
+    position: relative;
+}
+
+
+/* =========================================================
+   CANVAS
+========================================================= */
+
+canvas {
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    width: 100vw !important;
+    height: 100vh !important;
+
+    display: block;
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   COMMON
+========================================================= */
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   HOME
+========================================================= */
+
+#home-menu {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 200;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(255,255,255,0.025),
+            transparent 45%
+        );
+
+    transition:
+        opacity 0.6s ease,
+        visibility 0.6s ease;
+
+}
+
+
+/* =========================================================
+   HOME CONTENT
+========================================================= */
+
+.home-content {
+
+    position: relative;
+
+    z-index: 10;
+
+    width: min(
+        760px,
+        90vw
+    );
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+/* =========================================================
+   HOME TITLE
+========================================================= */
+
+.home-title-wrap {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    margin-bottom: 54px;
+
+}
+
+
+#home-title {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(
+            38px,
+            6vw,
+            72px
+        );
+
+    font-weight: 500;
+
+    letter-spacing:
+        clamp(
+            7px,
+            1.2vw,
+            16px
+        );
+
+    line-height: 1;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.96
+        );
+
+    text-shadow:
+        0 0 25px
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+    animation:
+        titleReveal 1.4s
+        ease forwards;
+
+}
+
+
+/* =========================================================
+   TITLE LINE
+========================================================= */
+
+.home-title-line {
+
+    width: 90px;
+
+    height: 1px;
+
+    margin-top: 25px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.65),
+            transparent
+        );
+
+    animation:
+        lineReveal 1.8s
+        ease forwards;
+
+}
+
+
+/* =========================================================
+   YEAR
+========================================================= */
+
+.home-year {
+
+    margin-top: 17px;
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.46
+        );
+
+    font-weight: 300;
+
+}
+
+
+/* =========================================================
+   HOME BUTTONS
+========================================================= */
+
+#home-buttons {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 14px;
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   MENU BUTTON
+========================================================= */
+
+.menu-button {
+
+    position: relative;
+
+    width: min(
+        360px,
+        82vw
+    );
+
+    height: 58px;
+
+    border: 1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.20
+        );
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.018
+        );
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.78
+        );
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition:
+        border-color 0.35s ease,
+        background 0.35s ease,
+        color 0.35s ease,
+        transform 0.3s ease,
+        box-shadow 0.35s ease;
+
+}
+
+
+/* moving light */
+
+.menu-button::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -120%;
+
+    top: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.08),
+            transparent
+        );
+
+    transition:
+        left 0.6s ease;
+
+}
+
+
+.menu-button:hover::before {
+
+    left: 120%;
+
+}
+
+
+.menu-button:hover {
+
+    border-color:
+        rgba(
+            255,
+            255,
+            255,
+            0.58
+        );
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.055
+        );
+
+    color: white;
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 8px 35px
+        rgba(
+            255,
+            255,
+            255,
+            0.07
+        );
+
+}
+
+
+.menu-button:active {
+
+    transform:
+        translateY(0)
+        scale(0.98);
+
+}
+
+
+/* =========================================================
+   BUTTON TEXT
+========================================================= */
+
+.button-main-text {
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    font-weight: 400;
+
+}
+
+
+.button-arrow {
+
+    position: absolute;
+
+    right: 21px;
+
+    font-size: 17px;
+
+    opacity: 0.45;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+
+}
+
+
+.menu-button:hover
+.button-arrow {
+
+    transform:
+        translateX(5px);
+
+    opacity: 1;
+
+}
+
+
+/* =========================================================
+   HOME BOTTOM
+========================================================= */
+
+.home-bottom {
+
+    position: absolute;
+
+    bottom: 30px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    width: min(
+        500px,
+        80vw
+    );
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.20
+        );
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    white-space: nowrap;
+
+}
+
+
+.home-bottom span {
+
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.10
+        );
+
+}
+
+
+/* =========================================================
+   HOME DECORATIVE GLOW
+========================================================= */
+
+.home-glow {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    filter:
+        blur(50px);
+
+}
+
+
+.glow-one {
+
+    width: 320px;
+
+    height: 320px;
+
+    left: 10%;
+
+    top: 15%;
+
+    background:
+        rgba(
+            70,
+            80,
+            150,
+            0.035
+        );
+
+    animation:
+        floatingGlow 9s
+        ease-in-out
+        infinite;
+
+}
+
+
+.glow-two {
+
+    width: 280px;
+
+    height: 280px;
+
+    right: 8%;
+
+    bottom: 10%;
+
+    background:
+        rgba(
+            150,
+            70,
+            100,
+            0.025
+        );
+
+    animation:
+        floatingGlow 11s
+        ease-in-out
+        infinite reverse;
+
+}
+
+
+/* =========================================================
+   DECORATIVE STARS
+========================================================= */
+
+.home-stars {
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+}
+
+
+.star-dot {
+
+    position: absolute;
+
+    width: 2px;
+
+    height: 2px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+        0 0 8px
+        rgba(
+            255,
+            255,
+            255,
+            0.8
+        );
+
+    animation:
+        starPulse
+        3s
+        ease-in-out
+        infinite;
+
+}
+
+
+.star-1 {
+    left: 17%;
+    top: 22%;
+}
+
+.star-2 {
+    left: 29%;
+    top: 67%;
+    animation-delay: 0.8s;
+}
+
+.star-3 {
+    left: 72%;
+    top: 19%;
+    animation-delay: 1.4s;
+}
+
+.star-4 {
+    left: 83%;
+    top: 43%;
+    animation-delay: 0.3s;
+}
+
+.star-5 {
+    left: 12%;
+    top: 56%;
+    animation-delay: 1.9s;
+}
+
+.star-6 {
+    left: 65%;
+    top: 72%;
+    animation-delay: 1s;
+}
+
+.star-7 {
+    left: 91%;
+    top: 78%;
+    animation-delay: 2s;
+}
+
+.star-8 {
+    left: 42%;
+    top: 13%;
+    animation-delay: 1.2s;
+}
+
+.star-9 {
+    left: 55%;
+    top: 87%;
+    animation-delay: 0.5s;
+}
+
+.star-10 {
+    left: 6%;
+    top: 82%;
+    animation-delay: 1.7s;
+}
+
+
+/* =========================================================
+   MONTH MENU
+========================================================= */
+
+#month-menu {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 190;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    overflow-y: auto;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(255,255,255,0.025),
+            transparent 48%
+        );
+
+}
+
+
+.month-menu-content {
+
+    width: min(
+        620px,
+        90vw
+    );
+
+    padding:
+        40px 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+}
+
+
+.month-menu-label {
+
+    font-size: 9px;
+
+    letter-spacing: 5px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.38
+        );
+
+    margin-bottom: 10px;
+
+}
+
+
+#month-menu-title {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 38px;
+
+    font-weight: 500;
+
+    letter-spacing: 8px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.92
+        );
+
+}
+
+
+.month-menu-line {
+
+    width: 55px;
+
+    height: 1px;
+
+    margin:
+        17px 0 14px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.35
+        );
+
+}
+
+
+.month-menu-description {
+
+    font-size: 11px;
+
+    letter-spacing: 0.5px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.42
+        );
+
+    margin-bottom: 30px;
+
+}
+
+
+/* =========================================================
+   MONTH BUTTONS
+========================================================= */
+
+#month-buttons {
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.month-button {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 48px;
+
+    padding:
+        0 52px 0 22px;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.10
+        );
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.015
+        );
+
+    color:
+        white;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    text-align: left;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.25s ease;
+
+}
+
+
+.month-button.available:hover {
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.06
+        );
+
+    border-color:
+        rgba(
+            255,
+            255,
+            255,
+            0.38
+        );
+
+    transform:
+        translateX(4px);
+
+}
+
+
+.month-name {
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.month-status {
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.30
+        );
+
+}
+
+
+.month-button.available
+.month-status {
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.48
+        );
+
+}
+
+
+.month-arrow {
+
+    position: absolute;
+
+    right: 20px;
+
+    font-size: 16px;
+
+    opacity: 0.4;
+
+}
+
+
+.month-button.locked {
+
+    opacity: 0.22;
+
+    cursor: default;
+
+}
+
+
+.back-button {
+
+    margin-top: 25px;
+
+    border: none;
+
+    background: transparent;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.38
+        );
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+
+}
+
+
+.back-button:hover {
+
+    color: white;
+
+    transform:
+        translateX(-3px);
+
+}
+
+
+/* =========================================================
+   STORY UI
+========================================================= */
+
+#story-ui {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: none;
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   STORY INFORMATION
+========================================================= */
+
+#story-information {
+
+    position: absolute;
+
+    top: 5.5%;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: min(
+        800px,
+        90vw
+    );
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   SCENE MONTH
+========================================================= */
+
+#month {
+
+    order: 1;
+
+    font-size: 9px;
+
+    letter-spacing: 5px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.36
+        );
+
+    margin-bottom: 10px;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================================
+   SCENE TITLE
+========================================================= */
+
+#title {
+
+    order: 2;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(
+            27px,
+            3vw,
+            42px
+        );
+
+    font-weight: 500;
+
+    letter-spacing: 7px;
+
+    line-height: 1;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.95
+        );
+
+    text-shadow:
+        0 0 25px
+        rgba(
+            255,
+            255,
+            255,
+            0.07
+        );
+
+}
+
+
+/* =========================================================
+   SCENE SUBTITLE
+========================================================= */
+
+#subtitle {
+
+    order: 3;
+
+    margin-top: 12px;
+
+    max-width: 600px;
+
+    font-size: 11px;
+
+    letter-spacing: 0.8px;
+
+    line-height: 1.6;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.45
+        );
+
+}
+
+
+/* =========================================================
+   STORY ACTION
+========================================================= */
+
+#story-action {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 4.5%;
+
+    transform:
+        translateX(-50%);
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   CONTINUE BUTTON
+========================================================= */
+
+#next-button {
+
+    position: relative;
+
+    pointer-events: auto;
+
+    width: 150px;
+
+    height: 44px;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.25
+        );
+
+    border-radius: 2px;
+
+    background:
+        rgba(
+            0,
+            0,
+            0,
+            0.20
+        );
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.76
+        );
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.2s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+#next-button:hover {
+
+    border-color:
+        rgba(
+            255,
+            255,
+            255,
+            0.75
+        );
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.07
+        );
+
+    color: white;
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 5px 25px
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+}
+
+
+#next-button:active {
+
+    transform:
+        scale(0.96);
+
+}
+
+
+#next-button:disabled {
+
+    opacity: 0.25;
+
+    cursor: default;
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes titleReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+
+        letter-spacing: 20px;
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+@keyframes lineReveal {
+
+    from {
+
+        opacity: 0;
+
+        width: 0;
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        width: 90px;
+
+    }
+
+}
+
+
+@keyframes starPulse {
+
+    0%,
+    100% {
+
+        opacity: 0.2;
+
+        transform:
+            scale(0.8);
+
+    }
+
+    50% {
+
+        opacity: 0.9;
+
+        transform:
+            scale(1.8);
+
+    }
+
+}
+
+
+@keyframes floatingGlow {
+
+    0%,
+    100% {
+
+        transform:
+            translate(
+                0,
+                0
+            );
+
+    }
+
+    50% {
+
+        transform:
+            translate(
+                25px,
+                -20px
+            );
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (
+    max-width: 768px
+) {
+
+    #home-title {
+
+        font-size: 34px;
+
+        letter-spacing: 7px;
+
+    }
+
+
+    .home-title-wrap {
+
+        margin-bottom: 45px;
+
+    }
+
+
+    .home-bottom {
+
+        bottom: 20px;
+
+        font-size: 7px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    #story-information {
+
+        top: 5%;
+
+    }
+
+
+    #title {
+
+        font-size: 27px;
+
+        letter-spacing: 5px;
+
+    }
+
+
+    #subtitle {
+
+        font-size: 10px;
+
+        max-width: 80vw;
+
+    }
+
+
+    #story-action {
+
+        bottom: 4%;
+
+    }
+
+
+    #next-button {
+
+        width: 145px;
+
+        height: 45px;
+
+    }
+
+
+    #month-menu-title {
+
+        font-size: 32px;
+
+        letter-spacing: 6px;
+
+    }
+
+
+    .month-menu-content {
+
+        width: 88vw;
+
+    }
+
+}
+
+
+@media (
+    max-width: 480px
+) {
+
+    #home-title {
+
+        font-size: 27px;
+
+        letter-spacing: 5px;
+
+    }
+
+
+    .home-year {
+
+        font-size: 8px;
+
+        letter-spacing: 4px;
+
+    }
+
+
+    .menu-button {
+
+        width: 82vw;
+
+        height: 54px;
+
+    }
+
+
+    .button-main-text {
+
+        font-size: 9px;
+
+        letter-spacing: 3px;
+
+    }
+
+
+    #story-information {
+
+        top: 4%;
+
+    }
+
+
+    #month {
+
+        font-size: 8px;
+
+        letter-spacing: 4px;
+
+    }
+
+
+    #title {
+
+        font-size: 23px;
+
+        letter-spacing: 4px;
+
+    }
+
+
+    #subtitle {
+
+        margin-top: 9px;
+
+        font-size: 9px;
+
+    }
+
+
+    .month-name {
+
+        font-size: 9px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    .month-status {
+
+        font-size: 7px;
+
+    }
+
+}

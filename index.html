@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Seventeen Stars</title>
+
+
+    <!-- =================================
+         GOOGLE FONTS
+    ================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =================================
+         MAIN STYLE
+    ================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================
+         BACKGROUND MUSIC
+    ================================== -->
+
+    <audio
+        id="background-music"
+        src="audio/We Are.mp3"
+        loop
+        preload="auto"
+    ></audio>
+
+
+    <!-- =================================
+         P5 CANVAS
+    ================================== -->
+
+    <main
+        id="canvas-container"
+    ></main>
+
+
+    <!-- =================================
+         HOME / COVER
+    ================================== -->
+
+    <section
+        id="home-menu"
+    >
+
+        <!-- Decorative atmosphere -->
+
+        <div
+            class="home-glow glow-one"
+        ></div>
+
+        <div
+            class="home-glow glow-two"
+        ></div>
+
+
+        <div
+            class="home-stars"
+        >
+
+            <span class="star-dot star-1"></span>
+            <span class="star-dot star-2"></span>
+            <span class="star-dot star-3"></span>
+            <span class="star-dot star-4"></span>
+            <span class="star-dot star-5"></span>
+            <span class="star-dot star-6"></span>
+            <span class="star-dot star-7"></span>
+            <span class="star-dot star-8"></span>
+            <span class="star-dot star-9"></span>
+            <span class="star-dot star-10"></span>
+
+        </div>
+
+
+        <!-- Main cover -->
+
+        <div
+            class="home-content"
+        >
+
+            <div
+                class="home-title-wrap"
+            >
+
+                <h1
+                    id="home-title"
+                >
+                    SEVENTEEN STARS
+                </h1>
+
+
+                <div
+                    class="home-title-line"
+                ></div>
+
+
+                <div
+                    class="home-year"
+                >
+                    MAGANGHUB · 2026
+                </div>
+
+            </div>
+
+
+            <!-- Menu -->
+
+            <div
+                id="home-buttons"
+            >
+
+                <button
+                    id="follow-story-button"
+                    class="menu-button primary"
+                    type="button"
+                >
+
+                    <span class="button-main-text">
+                        FOLLOW JOURNEY
+                    </span>
+
+                    <span class="button-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <button
+                    id="memories-button"
+                    class="menu-button secondary"
+                    type="button"
+                >
+
+                    <span class="button-main-text">
+                        MEMORIES EXPLORE
+                    </span>
+
+                    <span class="button-arrow">
+                        →
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Bottom decoration -->
+
+        <div
+            class="home-bottom"
+        >
+
+            <span></span>
+
+            <div>
+                17 LIGHTS · COUNTLESS MOMENTS
+            </div>
+
+            <span></span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================
+         MEMORIES / MONTH MENU
+    ================================== -->
+
+    <section
+        id="month-menu"
+    >
+
+        <div
+            class="month-menu-content"
+        >
+
+            <div
+                class="month-menu-label"
+            >
+                SEVENTEEN STARS
+            </div>
+
+
+            <h2
+                id="month-menu-title"
+            >
+                MEMORIES
+            </h2>
+
+
+            <div
+                class="month-menu-line"
+            ></div>
+
+
+            <p
+                class="month-menu-description"
+            >
+                Choose a month to revisit the journey.
+            </p>
+
+
+            <div
+                id="month-buttons"
+            >
+
+                <!-- AUGUST -->
+
+                <button
+                    id="month-august"
+                    class="month-button available"
+                    type="button"
+                >
+
+                    <span class="month-name">
+                        AUGUST 2026
+                    </span>
+
+                    <span class="month-status">
+                        AVAILABLE
+                    </span>
+
+                    <span class="month-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <!-- SEPTEMBER -->
+
+                <button
+                    id="month-september"
+                    class="month-button available"
+                    type="button"
+                >
+
+                    <span class="month-name">
+                        SEPTEMBER 2026
+                    </span>
+
+                    <span class="month-status">
+                        AVAILABLE
+                    </span>
+
+                    <span class="month-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <!-- OCTOBER -->
+
+                <button
+                    id="month-october"
+                    class="month-button locked"
+                    type="button"
+                    disabled
+                >
+
+                    <span class="month-name">
+                        OCTOBER 2026
+                    </span>
+
+                    <span class="month-status">
+                        COMING SOON
+                    </span>
+
+                </button>
+
+
+                <!-- NOVEMBER -->
+
+                <button
+                    id="month-november"
+                    class="month-button locked"
+                    type="button"
+                    disabled
+                >
+
+                    <span class="month-name">
+                        NOVEMBER 2026
+                    </span>
+
+                    <span class="month-status">
+                        COMING SOON
+                    </span>
+
+                </button>
+
+
+                <!-- DECEMBER -->
+
+                <button
+                    id="month-december"
+                    class="month-button locked"
+                    type="button"
+                    disabled
+                >
+
+                    <span class="month-name">
+                        DECEMBER 2026
+                    </span>
+
+                    <span class="month-status">
+                        COMING SOON
+                    </span>
+
+                </button>
+
+
+                <!-- JANUARY -->
+
+                <button
+                    id="month-january"
+                    class="month-button locked"
+                    type="button"
+                    disabled
+                >
+
+                    <span class="month-name">
+                        JANUARY 2027
+                    </span>
+
+                    <span class="month-status">
+                        COMING SOON
+                    </span>
+
+                </button>
+
+
+                <!-- FEBRUARY -->
+
+                <button
+                    id="month-february"
+                    class="month-button locked"
+                    type="button"
+                    disabled
+                >
+
+                    <span class="month-name">
+                        FEBRUARY 2027
+                    </span>
+
+                    <span class="month-status">
+                        COMING SOON
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <button
+                id="back-home-button"
+                class="back-button"
+                type="button"
+            >
+                ← BACK TO HOME
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================
+         STORY UI
+    ================================== -->
+
+    <section
+        id="story-ui"
+    >
+
+        <!-- TOP INFORMATION -->
+
+        <div
+            id="story-information"
+        >
+
+            <div
+                id="month"
+            >
+                AUGUST 2026
+            </div>
+
+
+            <div
+                id="title"
+            >
+                SEVENTEEN STARS
+            </div>
+
+
+            <div
+                id="subtitle"
+            >
+                17 people. Countless moments.
+            </div>
+
+        </div>
+
+
+        <!-- BOTTOM ACTION -->
+
+        <div
+            id="story-action"
+        >
+
+            <button
+                id="next-button"
+                type="button"
+            >
+                CONTINUE
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================
+         P5.JS
+    ================================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.min.js"
+    ></script>
+
+
+    <!-- =================================
+         STAR SYSTEM
+    ================================== -->
+
+    <script
+        src="js/stars.js"
+    ></script>
+
+
+    <!-- =================================
+         AUGUST 2026
+    ================================== -->
+
+    <script
+        src="memories/august/onboarding.js"
+    ></script>
+
+
+    <script
+        src="memories/august/laptop.js"
+    ></script>
+
+
+    <script
+        src="memories/august/padel.js"
+    ></script>
+
+
+    <script
+        src="memories/august/cafe.js"
+    ></script>
+
+
+    <script
+        src="memories/august/cinema.js"
+    ></script>
+
+
+    <!-- =================================
+         SEPTEMBER 2026
+    ================================== -->
+
+    <script
+        src="memories/september/basketball.js"
+    ></script>
+
+
+    <script
+        src="memories/september/running.js"
+    ></script>
+
+
+    <script
+        src="memories/september/duck.js"
+    ></script>
+
+
+    <script
+        src="memories/september/fire-drill.js"
+    ></script>
+
+
+    <script
+        src="memories/september/health-check.js"
+    ></script>
+
+
+    <script
+        src="memories/september/warung.js"
+    ></script>
+
+
+    <script
+        src="memories/september/futsal.js"
+    ></script>
+
+
+    <script
+        src="memories/september/summarecon.js"
+    ></script>
+
+
+    <!-- =================================
+         STORY SYSTEM
+    ================================== -->
+
+    <script
+        src="js/story.js"
+    ></script>
+
+
+    <!-- =================================
+         MAIN APPLICATION
+    ================================== -->
+
+    <script
+        src="js/main.js"
+    ></script>
+
+
+</body>
+
+</html>
