@@ -57,7 +57,9 @@ class Story {
 
             new FutsalScene(),
 
-            new SummareconScene()
+            new SummareconScene(),
+
+            new GoodbyeScene()
 
         ];
 
@@ -74,7 +76,8 @@ class Story {
 
                 end: 4,
 
-                label: "AUGUST 2026"
+                label:
+                    "AUGUST 2026"
 
             },
 
@@ -83,9 +86,10 @@ class Story {
 
                 start: 5,
 
-                end: 12,
+                end: 13,
 
-                label: "SEPTEMBER 2026"
+                label:
+                    "SEPTEMBER 2026"
 
             }
 
@@ -180,7 +184,9 @@ class Story {
         // HOME EVENTS
         // =====================================
 
-        if (this.followButton) {
+        if (
+            this.followButton
+        ) {
 
             this.followButton.addEventListener(
                 "click",
@@ -200,7 +206,9 @@ class Story {
         }
 
 
-        if (this.memoriesButton) {
+        if (
+            this.memoriesButton
+        ) {
 
             this.memoriesButton.addEventListener(
                 "click",
@@ -221,10 +229,12 @@ class Story {
 
 
         // =====================================
-        // MONTH EVENTS
+        // AUGUST
         // =====================================
 
-        if (this.augustButton) {
+        if (
+            this.augustButton
+        ) {
 
             this.augustButton.addEventListener(
                 "click",
@@ -246,7 +256,13 @@ class Story {
         }
 
 
-        if (this.septemberButton) {
+        // =====================================
+        // SEPTEMBER
+        // =====================================
+
+        if (
+            this.septemberButton
+        ) {
 
             this.septemberButton.addEventListener(
                 "click",
@@ -272,7 +288,9 @@ class Story {
         // BACK HOME
         // =====================================
 
-        if (this.backHomeButton) {
+        if (
+            this.backHomeButton
+        ) {
 
             this.backHomeButton.addEventListener(
                 "click",
@@ -291,10 +309,12 @@ class Story {
 
 
         // =====================================
-        // CONTINUE BUTTON
+        // CONTINUE
         // =====================================
 
-        if (this.button) {
+        if (
+            this.button
+        ) {
 
             this.button.addEventListener(
                 "click",
@@ -354,23 +374,29 @@ class Story {
         }
 
 
-        if (scene.update) {
+        if (
+            scene.update
+        ) {
 
             scene.update();
 
         }
 
 
-        if (scene.display) {
+        if (
+            scene.updateHover
+        ) {
 
-            scene.display();
+            scene.updateHover();
 
         }
 
 
-        if (scene.updateHover) {
+        if (
+            scene.display
+        ) {
 
-            scene.updateHover();
+            scene.display();
 
         }
 
@@ -383,7 +409,7 @@ class Story {
 
 
     // =========================================
-    // HANDLE CANVAS CLICK
+    // HANDLE CLICK
     // =========================================
 
     handleClick() {
@@ -411,7 +437,9 @@ class Story {
         }
 
 
-        if (scene.mousePressed) {
+        if (
+            scene.mousePressed
+        ) {
 
             scene.mousePressed();
 
@@ -426,10 +454,12 @@ class Story {
 
     startJourney() {
 
-        this.mode = "story";
+        this.mode =
+            "story";
 
 
-        this.currentScene = 0;
+        this.currentScene =
+            0;
 
 
         this.endScene =
@@ -438,12 +468,9 @@ class Story {
 
         this.hideHome();
 
-
         this.hideMemories();
 
-
         this.showStory();
-
 
         this.showScene();
 
@@ -451,21 +478,23 @@ class Story {
 
 
     // =========================================
-    // SHOW MONTH MENU
+    // SHOW MEMORIES
     // =========================================
 
     showMemories() {
 
-        this.mode = "home";
+        this.mode =
+            "home";
 
 
         this.hideHome();
 
-
         this.hideStory();
 
 
-        if (this.monthMenu) {
+        if (
+            this.monthMenu
+        ) {
 
             this.monthMenu.style.display =
                 "flex";
@@ -476,7 +505,7 @@ class Story {
 
 
     // =========================================
-    // START SPECIFIC MONTH
+    // START MONTH
     // =========================================
 
     startMonth(
@@ -496,7 +525,8 @@ class Story {
         }
 
 
-        this.mode = "memory";
+        this.mode =
+            "memory";
 
 
         this.currentScene =
@@ -509,12 +539,9 @@ class Story {
 
         this.hideHome();
 
-
         this.hideMemories();
 
-
         this.showStory();
-
 
         this.showScene();
 
@@ -565,10 +592,12 @@ class Story {
 
 
         // =====================================
-        // EXIT CURRENT SCENE
+        // EXIT
         // =====================================
 
-        if (scene.exit) {
+        if (
+            scene.exit
+        ) {
 
             scene.exit();
 
@@ -594,7 +623,7 @@ class Story {
 
 
         // =====================================
-        // END OF FOLLOW JOURNEY
+        // END FOLLOW JOURNEY
         // =====================================
 
         if (
@@ -609,7 +638,7 @@ class Story {
 
 
         // =====================================
-        // END OF MONTH
+        // END MONTH
         // =====================================
 
         if (
@@ -642,7 +671,9 @@ class Story {
         }
 
 
-        if (scene.enter) {
+        if (
+            scene.enter
+        ) {
 
             scene.enter();
 
@@ -657,7 +688,7 @@ class Story {
 
 
     // =========================================
-    // UPDATE STORY UI
+    // UPDATE UI
     // =========================================
 
     updateUI(
@@ -671,7 +702,9 @@ class Story {
         }
 
 
-        if (this.month) {
+        if (
+            this.month
+        ) {
 
             this.month.textContent =
                 scene.month ||
@@ -680,7 +713,9 @@ class Story {
         }
 
 
-        if (this.title) {
+        if (
+            this.title
+        ) {
 
             this.title.textContent =
                 scene.title ||
@@ -689,7 +724,9 @@ class Story {
         }
 
 
-        if (this.subtitle) {
+        if (
+            this.subtitle
+        ) {
 
             this.subtitle.textContent =
                 scene.subtitle ||
@@ -698,7 +735,9 @@ class Story {
         }
 
 
-        if (this.button) {
+        if (
+            this.button
+        ) {
 
             this.button.textContent =
                 scene.buttonText ||
@@ -715,7 +754,7 @@ class Story {
 
 
     // =========================================
-    // UPDATE BUTTON
+    // BUTTON STATE
     // =========================================
 
     updateButton(
@@ -757,8 +796,6 @@ class Story {
 
     showHome() {
 
-        // Exit current scene if needed
-
         if (
             this.mode === "story" ||
             this.mode === "memory"
@@ -782,16 +819,18 @@ class Story {
         }
 
 
-        this.mode = "home";
+        this.mode =
+            "home";
 
 
         this.hideStory();
 
-
         this.hideMemories();
 
 
-        if (this.homeMenu) {
+        if (
+            this.homeMenu
+        ) {
 
             this.homeMenu.style.display =
                 "flex";
@@ -807,7 +846,9 @@ class Story {
 
     hideHome() {
 
-        if (this.homeMenu) {
+        if (
+            this.homeMenu
+        ) {
 
             this.homeMenu.style.display =
                 "none";
@@ -823,7 +864,9 @@ class Story {
 
     showStory() {
 
-        if (this.storyUI) {
+        if (
+            this.storyUI
+        ) {
 
             this.storyUI.style.display =
                 "block";
@@ -839,7 +882,9 @@ class Story {
 
     hideStory() {
 
-        if (this.storyUI) {
+        if (
+            this.storyUI
+        ) {
 
             this.storyUI.style.display =
                 "none";
@@ -855,7 +900,9 @@ class Story {
 
     hideMemories() {
 
-        if (this.monthMenu) {
+        if (
+            this.monthMenu
+        ) {
 
             this.monthMenu.style.display =
                 "none";
