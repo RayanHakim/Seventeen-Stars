@@ -59,7 +59,9 @@ class Story {
 
             new SummareconScene(),
 
-            new GoodbyeScene()
+            new GoodbyeScene(),
+
+            new ProjectCharterScene()
 
         ];
 
@@ -86,7 +88,7 @@ class Story {
 
                 start: 5,
 
-                end: 13,
+                end: 14,
 
                 label:
                     "SEPTEMBER 2026"
