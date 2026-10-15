@@ -1,3 +1,4 @@
+
 class Story {
 
     constructor() {
@@ -14,54 +15,49 @@ class Story {
         // =====================================
 
         this.currentScene = 0;
-
         this.endScene = 0;
 
 
         // =====================================
         // SCENES
+        // ORDER DETERMINES STORY
         // =====================================
 
         this.scenes = [
 
             // =================================
-            // AUGUST 2026
+            // AUGUST 2026 (0-4)
             // =================================
 
-            new OnboardingScene(),
-
-            new LaptopScene(),
-
-            new PadelScene(),
-
-            new AugustCafeScene(),
-
-            new CinemaScene(),
+            new OnboardingScene(),       // 0
+            new LaptopScene(),           // 1
+            new PadelScene(),            // 2
+            new AugustCafeScene(),       // 3
+            new CinemaScene(),           // 4
 
 
             // =================================
-            // SEPTEMBER 2026
+            // SEPTEMBER 2026 (5-14)
             // =================================
 
-            new BasketballScene(),
+            new BasketballScene(),       // 5
+            new RunningScene(),           // 6
+            new DuckScene(),              // 7
+            new FireDrillScene(),         // 8
+            new HealthCheckScene(),       // 9
+            new WarungScene(),            // 10
+            new FutsalScene(),            // 11
+            new SummareconScene(),        // 12
 
-            new RunningScene(),
+            new GoodbyeScene(),           // 13
+            new ProjectCharterScene(),    // 14
 
-            new DuckScene(),
 
-            new FireDrillScene(),
+            // =================================
+            // OCTOBER 2026 (15)
+            // =================================
 
-            new HealthCheckScene(),
-
-            new WarungScene(),
-
-            new FutsalScene(),
-
-            new SummareconScene(),
-
-            new GoodbyeScene(),
-
-            new ProjectCharterScene()
+            new PreparationScene()        // 15
 
         ];
 
@@ -73,26 +69,21 @@ class Story {
         this.monthRanges = {
 
             august: {
-
                 start: 0,
-
                 end: 4,
-
-                label:
-                    "AUGUST 2026"
-
+                label: "AUGUST 2026"
             },
 
-
             september: {
-
                 start: 5,
-
                 end: 14,
+                label: "SEPTEMBER 2026"
+            },
 
-                label:
-                    "SEPTEMBER 2026"
-
+            october: {
+                start: 15,
+                end: 15,
+                label: "OCTOBER 2026"
             }
 
         };
@@ -103,103 +94,69 @@ class Story {
         // =====================================
 
         this.storyUI =
-            document.getElementById(
-                "story-ui"
-            );
-
+            document.getElementById("story-ui");
 
         this.button =
-            document.getElementById(
-                "next-button"
-            );
-
+            document.getElementById("next-button");
 
         this.month =
-            document.getElementById(
-                "month"
-            );
-
+            document.getElementById("month");
 
         this.title =
-            document.getElementById(
-                "title"
-            );
-
+            document.getElementById("title");
 
         this.subtitle =
-            document.getElementById(
-                "subtitle"
-            );
+            document.getElementById("subtitle");
 
 
         // =====================================
-        // HOME
+        // HOME ELEMENTS
         // =====================================
 
         this.homeMenu =
-            document.getElementById(
-                "home-menu"
-            );
-
+            document.getElementById("home-menu");
 
         this.followButton =
-            document.getElementById(
-                "follow-story-button"
-            );
-
+            document.getElementById("follow-story-button");
 
         this.memoriesButton =
-            document.getElementById(
-                "memories-button"
-            );
+            document.getElementById("memories-button");
 
 
         // =====================================
-        // MONTH MENU
+        // MONTH MENU ELEMENTS
         // =====================================
 
         this.monthMenu =
-            document.getElementById(
-                "month-menu"
-            );
-
+            document.getElementById("month-menu");
 
         this.augustButton =
-            document.getElementById(
-                "month-august"
-            );
-
+            document.getElementById("month-august");
 
         this.septemberButton =
-            document.getElementById(
-                "month-september"
-            );
+            document.getElementById("month-september");
 
+        this.octoberButton =
+            document.getElementById("month-october");
 
         this.backHomeButton =
-            document.getElementById(
-                "back-home-button"
-            );
+            document.getElementById("back-home-button");
 
 
         // =====================================
         // HOME EVENTS
         // =====================================
 
-        if (
-            this.followButton
-        ) {
+        if (this.followButton) {
 
             this.followButton.addEventListener(
                 "click",
                 (event) => {
 
                     event.preventDefault();
-
                     event.stopPropagation();
 
-                    startMusic();
-
+                    this.playMusic();
                     this.startJourney();
 
                 }
@@ -208,20 +165,16 @@ class Story {
         }
 
 
-        if (
-            this.memoriesButton
-        ) {
+        if (this.memoriesButton) {
 
             this.memoriesButton.addEventListener(
                 "click",
                 (event) => {
 
                     event.preventDefault();
-
                     event.stopPropagation();
 
-                    startMusic();
-
+                    this.playMusic();
                     this.showMemories();
 
                 }
@@ -231,26 +184,20 @@ class Story {
 
 
         // =====================================
-        // AUGUST
+        // AUGUST BUTTON
         // =====================================
 
-        if (
-            this.augustButton
-        ) {
+        if (this.augustButton) {
 
             this.augustButton.addEventListener(
                 "click",
                 (event) => {
 
                     event.preventDefault();
-
                     event.stopPropagation();
 
-                    startMusic();
-
-                    this.startMonth(
-                        "august"
-                    );
+                    this.playMusic();
+                    this.startMonth("august");
 
                 }
             );
@@ -259,26 +206,20 @@ class Story {
 
 
         // =====================================
-        // SEPTEMBER
+        // SEPTEMBER BUTTON
         // =====================================
 
-        if (
-            this.septemberButton
-        ) {
+        if (this.septemberButton) {
 
             this.septemberButton.addEventListener(
                 "click",
                 (event) => {
 
                     event.preventDefault();
-
                     event.stopPropagation();
 
-                    startMusic();
-
-                    this.startMonth(
-                        "september"
-                    );
+                    this.playMusic();
+                    this.startMonth("september");
 
                 }
             );
@@ -287,19 +228,38 @@ class Story {
 
 
         // =====================================
-        // BACK HOME
+        // OCTOBER BUTTON
         // =====================================
 
-        if (
-            this.backHomeButton
-        ) {
+        if (this.octoberButton) {
+
+            this.octoberButton.addEventListener(
+                "click",
+                (event) => {
+
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    this.playMusic();
+                    this.startMonth("october");
+
+                }
+            );
+
+        }
+
+
+        // =====================================
+        // BACK TO HOME BUTTON
+        // =====================================
+
+        if (this.backHomeButton) {
 
             this.backHomeButton.addEventListener(
                 "click",
                 (event) => {
 
                     event.preventDefault();
-
                     event.stopPropagation();
 
                     this.showHome();
@@ -311,19 +271,16 @@ class Story {
 
 
         // =====================================
-        // CONTINUE
+        // GLOBAL CONTINUE BUTTON
         // =====================================
 
-        if (
-            this.button
-        ) {
+        if (this.button) {
 
             this.button.addEventListener(
                 "click",
                 (event) => {
 
                     event.preventDefault();
-
                     event.stopPropagation();
 
                     this.next();
@@ -337,7 +294,22 @@ class Story {
 
 
     // =========================================
-    // START
+    // PLAY MUSIC SAFELY
+    // =========================================
+
+    playMusic() {
+
+        if (typeof startMusic === "function") {
+
+            startMusic();
+
+        }
+
+    }
+
+
+    // =========================================
+    // START APPLICATION
     // =========================================
 
     start() {
@@ -364,9 +336,7 @@ class Story {
 
 
         const scene =
-            this.scenes[
-                this.currentScene
-            ];
+            this.scenes[this.currentScene];
 
 
         if (!scene) {
@@ -376,42 +346,34 @@ class Story {
         }
 
 
-        if (
-            scene.update
-        ) {
+        if (typeof scene.update === "function") {
 
             scene.update();
 
         }
 
 
-        if (
-            scene.updateHover
-        ) {
+        if (typeof scene.updateHover === "function") {
 
             scene.updateHover();
 
         }
 
 
-        if (
-            scene.display
-        ) {
+        if (typeof scene.display === "function") {
 
             scene.display();
 
         }
 
 
-        this.updateButton(
-            scene
-        );
+        this.updateButton(scene);
 
     }
 
 
     // =========================================
-    // HANDLE CLICK
+    // HANDLE CANVAS CLICK
     // =========================================
 
     handleClick() {
@@ -427,9 +389,7 @@ class Story {
 
 
         const scene =
-            this.scenes[
-                this.currentScene
-            ];
+            this.scenes[this.currentScene];
 
 
         if (!scene) {
@@ -439,9 +399,7 @@ class Story {
         }
 
 
-        if (
-            scene.mousePressed
-        ) {
+        if (typeof scene.mousePressed === "function") {
 
             scene.mousePressed();
 
@@ -456,16 +414,11 @@ class Story {
 
     startJourney() {
 
-        this.mode =
-            "story";
+        this.mode = "story";
 
+        this.currentScene = 0;
 
-        this.currentScene =
-            0;
-
-
-        this.endScene =
-            this.scenes.length - 1;
+        this.endScene = this.scenes.length - 1;
 
 
         this.hideHome();
@@ -480,13 +433,12 @@ class Story {
 
 
     // =========================================
-    // SHOW MEMORIES
+    // SHOW MEMORIES MENU
     // =========================================
 
     showMemories() {
 
-        this.mode =
-            "home";
+        this.mode = "home";
 
 
         this.hideHome();
@@ -494,12 +446,9 @@ class Story {
         this.hideStory();
 
 
-        if (
-            this.monthMenu
-        ) {
+        if (this.monthMenu) {
 
-            this.monthMenu.style.display =
-                "flex";
+            this.monthMenu.style.display = "flex";
 
         }
 
@@ -507,36 +456,50 @@ class Story {
 
 
     // =========================================
-    // START MONTH
+    // START SELECTED MONTH
     // =========================================
 
-    startMonth(
-        monthName
-    ) {
+    startMonth(monthName) {
 
         const range =
-            this.monthRanges[
-                monthName
-            ];
+            this.monthRanges[monthName];
 
 
         if (!range) {
+
+            console.error(
+                "Month range not found:",
+                monthName
+            );
 
             return;
 
         }
 
 
-        this.mode =
-            "memory";
+        // Validate selected scene range.
+
+        if (
+            !this.scenes[range.start] ||
+            !this.scenes[range.end]
+        ) {
+
+            console.error(
+                "Scene range is invalid:",
+                monthName,
+                range
+            );
+
+            return;
+
+        }
 
 
-        this.currentScene =
-            range.start;
+        this.mode = "memory";
 
+        this.currentScene = range.start;
 
-        this.endScene =
-            range.end;
+        this.endScene = range.end;
 
 
         this.hideHome();
@@ -551,7 +514,7 @@ class Story {
 
 
     // =========================================
-    // NEXT
+    // NEXT SCENE
     // =========================================
 
     next() {
@@ -567,9 +530,7 @@ class Story {
 
 
         const scene =
-            this.scenes[
-                this.currentScene
-            ];
+            this.scenes[this.currentScene];
 
 
         if (!scene) {
@@ -580,11 +541,11 @@ class Story {
 
 
         // =====================================
-        // CHECK COMPLETION
+        // CHECK SCENE COMPLETION
         // =====================================
 
         if (
-            scene.canContinue &&
+            typeof scene.canContinue === "function" &&
             !scene.canContinue()
         ) {
 
@@ -594,12 +555,10 @@ class Story {
 
 
         // =====================================
-        // EXIT
+        // EXIT CURRENT SCENE
         // =====================================
 
-        if (
-            scene.exit
-        ) {
+        if (typeof scene.exit === "function") {
 
             scene.exit();
 
@@ -607,13 +566,10 @@ class Story {
 
 
         // =====================================
-        // NEXT SCENE
+        // ADVANCE TO NEXT SCENE
         // =====================================
 
-        if (
-            this.currentScene <
-            this.endScene
-        ) {
+        if (this.currentScene < this.endScene) {
 
             this.currentScene++;
 
@@ -625,12 +581,10 @@ class Story {
 
 
         // =====================================
-        // END FOLLOW JOURNEY
+        // END OF FULL JOURNEY
         // =====================================
 
-        if (
-            this.mode === "story"
-        ) {
+        if (this.mode === "story") {
 
             this.showHome();
 
@@ -640,12 +594,10 @@ class Story {
 
 
         // =====================================
-        // END MONTH
+        // END OF SELECTED MONTH
         // =====================================
 
-        if (
-            this.mode === "memory"
-        ) {
+        if (this.mode === "memory") {
 
             this.showMemories();
 
@@ -655,47 +607,44 @@ class Story {
 
 
     // =========================================
-    // SHOW SCENE
+    // SHOW CURRENT SCENE
     // =========================================
 
     showScene() {
 
         const scene =
-            this.scenes[
-                this.currentScene
-            ];
+            this.scenes[this.currentScene];
 
 
         if (!scene) {
+
+            console.error(
+                "Scene not found at index:",
+                this.currentScene
+            );
 
             return;
 
         }
 
 
-        if (
-            scene.enter
-        ) {
+        if (typeof scene.enter === "function") {
 
             scene.enter();
 
         }
 
 
-        this.updateUI(
-            scene
-        );
+        this.updateUI(scene);
 
     }
 
 
     // =========================================
-    // UPDATE UI
+    // UPDATE STORY INFORMATION
     // =========================================
 
-    updateUI(
-        scene
-    ) {
+    updateUI(scene) {
 
         if (!scene) {
 
@@ -704,88 +653,73 @@ class Story {
         }
 
 
-        if (
-            this.month
-        ) {
+        if (this.month) {
 
             this.month.textContent =
-                scene.month ||
-                "";
+                scene.month || "";
 
         }
 
 
-        if (
-            this.title
-        ) {
+        if (this.title) {
 
             this.title.textContent =
-                scene.title ||
-                "";
+                scene.title || "";
 
         }
 
 
-        if (
-            this.subtitle
-        ) {
+        if (this.subtitle) {
 
             this.subtitle.textContent =
-                scene.subtitle ||
-                "";
+                scene.subtitle || "";
 
         }
 
 
-        if (
-            this.button
-        ) {
+        if (this.button) {
 
             this.button.textContent =
-                scene.buttonText ||
-                "CONTINUE";
+                scene.buttonText || "CONTINUE";
 
         }
 
 
-        this.updateButton(
-            scene
-        );
+        this.updateButton(scene);
 
     }
 
 
     // =========================================
-    // BUTTON STATE
+    // UPDATE GLOBAL CONTINUE BUTTON
     // =========================================
 
-    updateButton(
-        scene
-    ) {
+    updateButton(scene) {
 
-        if (
-            !scene ||
-            !this.button
-        ) {
+        if (!this.button) {
 
             return;
 
         }
 
 
-        if (
-            scene.canContinue
-        ) {
+        if (!scene) {
+
+            this.button.disabled = true;
+
+            return;
+
+        }
+
+
+        if (typeof scene.canContinue === "function") {
 
             this.button.disabled =
                 !scene.canContinue();
 
-        }
+        } else {
 
-        else {
-
-            this.button.disabled =
-                false;
+            this.button.disabled = false;
 
         }
 
@@ -798,20 +732,20 @@ class Story {
 
     showHome() {
 
+        // Exit the current scene before returning home.
+
         if (
             this.mode === "story" ||
             this.mode === "memory"
         ) {
 
             const scene =
-                this.scenes[
-                    this.currentScene
-                ];
+                this.scenes[this.currentScene];
 
 
             if (
                 scene &&
-                scene.exit
+                typeof scene.exit === "function"
             ) {
 
                 scene.exit();
@@ -821,8 +755,7 @@ class Story {
         }
 
 
-        this.mode =
-            "home";
+        this.mode = "home";
 
 
         this.hideStory();
@@ -830,12 +763,9 @@ class Story {
         this.hideMemories();
 
 
-        if (
-            this.homeMenu
-        ) {
+        if (this.homeMenu) {
 
-            this.homeMenu.style.display =
-                "flex";
+            this.homeMenu.style.display = "flex";
 
         }
 
@@ -848,12 +778,9 @@ class Story {
 
     hideHome() {
 
-        if (
-            this.homeMenu
-        ) {
+        if (this.homeMenu) {
 
-            this.homeMenu.style.display =
-                "none";
+            this.homeMenu.style.display = "none";
 
         }
 
@@ -861,17 +788,14 @@ class Story {
 
 
     // =========================================
-    // SHOW STORY
+    // SHOW STORY UI
     // =========================================
 
     showStory() {
 
-        if (
-            this.storyUI
-        ) {
+        if (this.storyUI) {
 
-            this.storyUI.style.display =
-                "block";
+            this.storyUI.style.display = "block";
 
         }
 
@@ -879,17 +803,14 @@ class Story {
 
 
     // =========================================
-    // HIDE STORY
+    // HIDE STORY UI
     // =========================================
 
     hideStory() {
 
-        if (
-            this.storyUI
-        ) {
+        if (this.storyUI) {
 
-            this.storyUI.style.display =
-                "none";
+            this.storyUI.style.display = "none";
 
         }
 
@@ -902,12 +823,9 @@ class Story {
 
     hideMemories() {
 
-        if (
-            this.monthMenu
-        ) {
+        if (this.monthMenu) {
 
-            this.monthMenu.style.display =
-                "none";
+            this.monthMenu.style.display = "none";
 
         }
 
