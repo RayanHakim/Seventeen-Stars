@@ -1,4 +1,3 @@
-
 class Story {
 
     constructor() {
@@ -54,10 +53,11 @@ class Story {
 
 
             // =================================
-            // OCTOBER 2026 (15)
+            // OCTOBER 2026 (15-16)
             // =================================
 
-            new PreparationScene()        // 15
+            new PreparationScene(),       // 15
+            new GetWellSoonScene()        // 16
 
         ];
 
@@ -82,7 +82,7 @@ class Story {
 
             october: {
                 start: 15,
-                end: 15,
+                end: 16,
                 label: "OCTOBER 2026"
             }
 

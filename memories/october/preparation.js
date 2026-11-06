@@ -1,4 +1,3 @@
-
 class PreparationScene {
     constructor() {
         this.month = "OCTOBER 2026";
@@ -109,7 +108,7 @@ class PreparationScene {
         this.drawHeader();
         this.drawCards();
         this.drawProgress();
-        this.drawContinueButton();
+        // this.drawContinueButton(); // Dihapus agar tidak bertumpuk dengan tombol HTML story.js
     }
 
     drawBackground() {
@@ -170,20 +169,12 @@ class PreparationScene {
         textAlign(CENTER, CENTER);
         noStroke();
 
-        fill(135, 165, 215);
-        textSize(11);
-        text(this.month, width / 2, height * 0.055);
-
-        fill(240, 242, 250);
-        textSize(min(30, width * 0.055));
-        text(this.title, width / 2, height * 0.095);
-
         fill(155, 169, 193);
         textSize(12);
         text(
             "A cafe, a table, and plans for Bandung.",
             width / 2,
-            height * 0.135
+            height * 0.155
         );
     }
 
@@ -322,31 +313,7 @@ class PreparationScene {
     }
 
     drawContinueButton() {
-        const enabled = this.canContinue();
-        const w = 150;
-        const h = 42;
-        const x = width / 2;
-        const y = height * 0.93;
-        const hover = this.isInside(mouseX, mouseY, x, y, w, h);
-
-        rectMode(CENTER);
-        noStroke();
-
-        fill(enabled ? (hover ? color(44, 68, 100) : color(24, 37, 57))
-                     : color(16, 19, 27));
-        rect(x, y, w, h, 5);
-
-        noFill();
-        stroke(enabled ? color(112, 158, 220, 180) : color(60, 68, 83, 100));
-        rect(x, y, w, h, 5);
-
-        noStroke();
-        fill(enabled ? 230 : 95);
-        textAlign(CENTER, CENTER);
-        textSize(11);
-        text(this.buttonText, x, y);
-
-        rectMode(CORNER);
+        // Fungsi sengaja dikosongkan agar tidak menggambar tombol canvas ganda
     }
 
     mousePressed() {
@@ -364,25 +331,6 @@ class PreparationScene {
                 this.completed[i] = true;
                 return;
             }
-        }
-
-        const button = {
-            x: width / 2,
-            y: height * 0.93,
-            w: 150,
-            h: 42
-        };
-
-        if (
-            this.canContinue() &&
-            this.isInside(
-                mouseX, mouseY,
-                button.x, button.y,
-                button.w, button.h
-            )
-        ) {
-            // Story.js handles moving to the next scene.
-            return;
         }
     }
 
